@@ -44,16 +44,6 @@ interface modelTokenLimit {
 }
 
 const apiKey = getPreferenceValues<Preferences>().openAiApiKey;
-const host = getPreferenceValues<Preferences>().host.split(':')[0];
-const port = getPreferenceValues<Preferences>().host.split(':')[1];
-
-const agent = tunnel.httpsOverHttp({
-  proxy: {
-    host,
-    port: Number(port)
-  }
-});
-
 const baseRequestConfig: CreateAxiosDefaults = {
   baseURL: "https://api.openai.com/v1",
   headers: {
@@ -62,8 +52,14 @@ const baseRequestConfig: CreateAxiosDefaults = {
   proxy: false,
 }
 
+const [host, port] = getPreferenceValues<Preferences>().host.split(':');
 if (host && port) {
-  baseRequestConfig.httpsAgent = agent
+  baseRequestConfig.httpsAgent = tunnel.httpsOverHttp({
+    proxy: {
+      host,
+      port: Number(port)
+    }
+  });
 }
 
 const baseRequest = request.create(baseRequestConfig);
