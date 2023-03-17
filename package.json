@@ -1,8 +1,8 @@
 {
   "$schema": "https://www.raycast.com/schemas/extension.json",
-  "name": "openai-gbt-with-proxy",
+  "name": "Openai-Gbt-With-Proxy",
   "version": "1.0.4",
-  "title": "openai-gbt-with-proxy",
+  "title": "Openai-Gbt-With-Proxy",
   "description": "openai gbt with your own proxy",
   "icon": "openai-logo.png",
   "author": "Rainbower",
@@ -16,7 +16,7 @@
     {
       "name": "chat",
       "title": "chat",
-      "subtitle": "openai-gbt-with-proxy",
+      "subtitle": "Openai-Gbt-With-Proxy",
       "description": "openai gbt with your own proxy",
       "mode": "view",
       "preferences": [

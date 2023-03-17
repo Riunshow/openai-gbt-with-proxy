@@ -1,3 +1,3 @@
-# openai-gbt-with-proxy
+# Openai-Gbt-With-Proxy
 
 openai gbt with your own proxy
